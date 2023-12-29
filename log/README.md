@@ -1,5 +1,7 @@
 # 从零实现WebServer之日志类
 
+
+
 ## 阻塞队列模板类
 
 {% note success %}
@@ -192,6 +194,10 @@ private:
 7. **异常处理**：在构造函数中，如果指定的最大容量小于等于0，程序将终止，以防止非法输入。
 
 ## 日志类
+
+### 流程图
+
+![io模块](https://glf-1309623969.cos.ap-shanghai.myqcloud.com/img/io.svg)
 
 ### 获取实例 get_instance
 
