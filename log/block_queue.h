@@ -5,8 +5,8 @@
 #include <cstdlib>
 #include <sys/time.h>
 #include <deque>
-#include "../locker/locker.h"
-
+//#include "../locker/locker.h"
+#include "/media/mzy/learn_TinyWebServer/locker/locker.h"
 
 using namespace std;
 
@@ -120,7 +120,7 @@ public:
         gettimeofday(&now, nullptr);
 
         m_mutex.lock();
-        if (m_size <= 0) {
+        if (m_deque.empty()) {
             t.tv_sec = now.tv_sec + ms_timeout / 1000;
             t.tv_nsec = (ms_timeout % 1000) * 1000;     //使用超时参数 ms_timeout 计算出等待的超时时间
             if (!m_cond.timewait(m_mutex.get(), t)) {   // 等待超时处理

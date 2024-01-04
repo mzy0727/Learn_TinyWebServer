@@ -6,8 +6,8 @@
 #include <string>
 #include <stdarg.h>
 #include <pthread.h>
-#include "block_queue.h"
-
+//#include "block_queue.h"
+#include "/media/mzy/learn_TinyWebServer/log/block_queue.h"
 using namespace std;
 
 class Log{
@@ -60,6 +60,7 @@ private:
     block_queue<string> *m_log_duque;   // 阻塞队列
     bool m_is_async;    // 是否异步
     mutexlocker m_mutex;
+    int m_close_log = 0;
 };
 
 // 检查snprintf返回值，防止warning
